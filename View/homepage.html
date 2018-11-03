@@ -6,51 +6,66 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- jquery -->
     <script src="scripts/jquery-3.3.1.min.js"></script>
     <script src="scripts/main.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    
 </head>
 <body>
-    <h2>CRUD web para sustentar meu webnamoro</h2>
-    <p>teste jQ</p>
+    
+    <!-- <h2>CRUD web para sustentar meu webnamoro</h2>-->
 
-    <div id="crud-id">
-        <ul id="ul-id">
-            
-            <li id="create-id">
-                <h3>[C]reate - Registre-se</h3>
-                Nome:<br/>
-                Usuário:<br/>
-                Senha:<br/>
-                CPF:<br/>
-                E-mail:<br/>
-            </li>
+    <div class="container" style="margin-top: 30px;">
 
-            <li id="read-id">
-                <h3>[R]ead - Procurar dados</h3>
-                Nome do Usuário:<br/>
-                CPF:<br/>
-            </li>
+        <div id="tabela" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Digite os dados do Usuário para adiciona-lo ao sistema!</h2>
+                    </div>
 
-            <li id="update-id">
-                <h3>[U]pdate - Atualizar dados do Usuário</h3>
-                Nome:<br/>
-                Usuário:<br/>
-                Senha:<br/>
-                CPF:<br/>
-                E-mail:<br/>
-            </li>
+                    <div class="modal-body">
+                        <input type="text" class="form-control" placeholder="Usuário:" id="usuario"><br>
+                        <input type="password" class="form-control" placeholder="Senha:" id="senha"><br>
+                        <input type="text" class="form-control" placeholder="E-mail:" id="email"><br>
+                        <input type="text" class="form-control" placeholder="CPF:" id="cpf"><br>
+                    </div>
 
-            <li id="delete-id">
-                <h3>[D]elete - Deletar Usuário</h3> 
-                <!-- botao delete com ajax -->
-                <button type="button" onclick="loadDoc()">Deletar</button>
-            </li>
-        </ul>
+                    <div class="modal-footer">
+                        <input type="button" onclick="salvarDados('addnew')" value="Salvar" class="btn btn-success">
+                    </div> 
+                </div>   
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h2>Atenção! Esse crud sustenta um webnamoro, favor tratar bem. Obrigado!</h2>
+                <input style="float: right" type="button" class="btn btn-success" id="addnew" value="Adicionar">
+                <br><br>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Usuário</td>
+                            <td>Senha</td>
+                            <td>E-mail</td>
+                            <td>CPF</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
     </div>
+
+    <!-- scripts online-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
 </body>
 
-<footer>
-    <h4>what a nice footer for a crud, man! mathG A.Aguiar copyright, bitch! dont copy this shit code</h4>
-</footer>
 </html>
 
