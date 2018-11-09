@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
+    <!-- alertify -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.1/build/alertify.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <!-- jquery -->
@@ -28,14 +31,14 @@
                     </div>
 
                     <div class="modal-body">
-                        <input type="text" class="form-control" placeholder="Usuário:" id="usuario"><br>
-                        <input type="password" class="form-control" placeholder="Senha:" id="senha"><br>
-                        <input type="text" class="form-control" placeholder="E-mail:" id="email"><br>
-                        <input type="text" class="form-control" placeholder="CPF:" id="cpf"><br>
+                        <input type="text" class="form-control" placeholder="Usuário:" id="inpUsuario"><br>
+                        <input type="password" class="form-control" placeholder="Senha:" id="inpSenha"><br>
+                        <input type="text" class="form-control" placeholder="E-mail:" id="inpEmail"><br>
+                        <input type="text" class="form-control" placeholder="CPF:" id="inpCPF"><br>
                     </div>
 
                     <div class="modal-footer">
-                        <input type="button" onclick="salvarDados('addnew')" value="Salvar" class="btn btn-success">
+                        <input type="button" id="btnsave" value="Salvar" class="btn btn-success">
                     </div> 
                 </div>   
             </div>
