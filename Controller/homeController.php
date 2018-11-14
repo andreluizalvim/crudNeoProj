@@ -1,5 +1,5 @@
 <?php
-require'../Model/User.php';
+require '../Model/User.php';
 /**
  * Arquivos de rotas para as requisições AJAX 
  * que utilizam o atributo 'key' da requisição 
@@ -35,7 +35,7 @@ switch($_SERVER['REQUEST_METHOD']){
                 break;
                 }    
             default:    
-                echo'Ajax error';
+                echo 'Ajax error';
                 break;
         }
     case'GET':
@@ -55,7 +55,7 @@ switch($_SERVER['REQUEST_METHOD']){
                 break;
             
             default:    
-                echo'Ajax error';
+                echo 'Ajax error';
                 break;
         }
         

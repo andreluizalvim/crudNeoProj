@@ -1,13 +1,7 @@
 <?php
-/**
- * Interface de conexao com o banco de dados
- * 
- * Utilizando o pradrão de projeto  Active Record
- * 
- * @author Gustavo Bueno <gbueno360@gmail.com>
- */
+
  require 'Config.php';
-class Conn{
+class Conn extends Config{
     private $servername;
     private $dbName;
     private $username;
@@ -100,11 +94,11 @@ class Conn{
      * pelos valores informados
      *
      * @param string $table
-     * @param int $id
+     * @param int $ID
      * @param array $data
      * @return boolean
      */
-    public function updateById($table,$id,$data){
+    public function updateById($table,$ID,$data){
         $conn = $this->getConnection();
         
         $set = [];
@@ -114,7 +108,7 @@ class Conn{
         $set = implode(', ', $set);
         $sql = "UPDATE $table
                 SET $set
-                WHERE id = $id";
+                WHERE ID = $ID";
                 
         try{
             $stmt = $conn->prepare($sql);
@@ -131,11 +125,11 @@ class Conn{
      * a partir de um id
      *
      * @param string $table
-     * @param integer $id
+     * @param integer $ID
      * @return array
      */
-    public function findById(string $table,int $id){
-        $sql = "SELECT * FROM $table WHERE id = $id";
+    public function findById(string $table,int $ID){
+        $sql = "SELECT * FROM $table WHERE id = $ID";
         try {
             $conn = $this->getConnection();
             $stmt = $conn->prepare($sql); 
@@ -177,11 +171,11 @@ class Conn{
      * Deleta um registro na tabela com determinado id
      *
      * @param string $table
-     * @param integer $id
+     * @param integer $ID
      * @return boolean
      */
-    public function deleteById(string $table, int $id){
-        $sql = "DELETE FROM $table WHERE id = $id";
+    public function deleteById(string $table, int $ID){
+        $sql = "DELETE FROM $table WHERE ID = $ID";
         try{
             $conn = $this->getConnection();
             $conn->exec($sql);

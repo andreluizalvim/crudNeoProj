@@ -6,9 +6,12 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    loadTable();
+
+
     //save on submit
-    $('#btnsave').click(function(event){
-        event.preventDefault();
+    $('#btnsave').on('click',function(){
         var Usuario = $('#inpUsuario').val();
         var Email = $('#inpEmail').val();
         var Senha = $('#inpSenha').val();
@@ -31,6 +34,7 @@ $(document).ready(function(){
         } else {
             alertify.alert("Controller nao linkado");
         }
+    })
 });
 
 function inputValidation(Usuario,Senha,CPF,Email){
@@ -52,7 +56,7 @@ function loadTable(){
     });
 }
 function reloadTable(){
-    $('table').empty();
+    $('#tabela').empty();
     loadTable();
 }
 

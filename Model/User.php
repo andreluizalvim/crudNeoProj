@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__.'/Conn.php';
-require_once __DIR__.'/Config.php';
-require_once __DIR__.'/Model.php';
+require '/Conn.php';
+require '/Config.php';
+require '/Model.php';
 /**
  * Modelo de usuário 
  * 
@@ -117,10 +117,10 @@ class User implements Model{
         $conn = new Conn();
         if($this->ID == null){
             $conn->insert($table,$this->toArray());
-            echo 'carai';
+            echo 'Salvo!';
         }else{
             $conn->updateById($table,$this->ID,$this->toArray());
-            echo 'porra';
+            echo 'Erro';
         }        
     }
     /**
